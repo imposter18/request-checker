@@ -10,7 +10,7 @@ export class AppController {
   }
 
   @Get('redirect')
-  @Redirect('http://localhost:3001', 302)
+  @Redirect('https://imposter18-request-checker-5ea4.twc1.net', 302)
   redirect(): void {
     console.log('redirect called');
 
