@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post} from '@nestjs/common';
+import {Body, Controller, Get, Post, Redirect} from '@nestjs/common';
 
 @Controller()
 export class AppController {
@@ -9,6 +9,12 @@ export class AppController {
     return { ok: true };
   }
 
+  @Get('redirect')
+  @Redirect('http://localhost:3001', 302)
+  redirect(): void {
+    console.log('redirect called');
+
+  }
 
   @Post()
   postRequestBody(@Body() body: unknown): { ok: true } {
