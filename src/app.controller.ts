@@ -16,6 +16,13 @@ export class AppController {
 
   }
 
+  @Get('redirect.git')
+  @Redirect('https://imposter18-request-checker-5ea4.twc1.net', 302)
+  redirectGit(): void {
+    console.log('redirect called git');
+
+  }
+
   @Post()
   postRequestBody(@Body() body: unknown): { ok: true } {
     console.log('postRequestBody', body)
