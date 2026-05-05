@@ -22,6 +22,26 @@ export class AppController {
         console.log('redirect called git refs');
     }
 
+
+    @Get('redis.git/info/refs')
+    @Redirect('https://192.168.10.213', 302)
+    redirectGitRedis(): void {
+        console.log('redirect called git refs');
+    }
+
+
+    @Get('redisno.git/info/refs')
+    @Redirect('https://193.168.10.213', 302)
+    redirectGitRedisNo(): void {
+        console.log('redirect called git refs');
+    }
+
+    @Get('redisno2.git/info/refs')
+    @Redirect('https://192.168.10.200', 302)
+    redirectGitRedisNo2(): void {
+        console.log('redirect called git refs');
+    }
+
     @Post()
     postRequestBody(@Body() body: unknown): { ok: true } {
         console.log('postRequestBody', body)
