@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, Redirect} from '@nestjs/common';
+import {Body, Controller, Get, HttpException, HttpStatus, Post, Redirect} from '@nestjs/common';
 
 @Controller()
 export class AppController {
@@ -6,7 +6,9 @@ export class AppController {
     getRequestBody(@Body() body: unknown): { ok: true } {
         console.log('getRequestBody', body);
 
-        return {ok: true};
+        throw new HttpException('test_err', HttpStatus.INTERNAL_SERVER_ERROR);
+
+        // return {ok: true};
     }
 
     @Get('redirect')
