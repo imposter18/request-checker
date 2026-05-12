@@ -1,7 +1,14 @@
-import {Body, Controller, Get, HttpException, HttpStatus, Post, Redirect} from '@nestjs/common';
+import {Body, Controller, Get, Head, HttpException, HttpStatus, Post, Redirect} from '@nestjs/common';
 
 @Controller()
 export class AppController {
+
+    @Head()
+    headRequest(): { ok: true } {
+        return {ok: true};
+    }
+
+
     @Get()
     getRequestBody(@Body() body: unknown): { ok: true } {
         console.log('getRequestBody', body);
