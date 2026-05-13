@@ -20,7 +20,7 @@ export class AppController {
 
     @Get('timeout')
     async getTimeout(@Body() body: unknown) {
-        await new Promise((resolve) => setTimeout(resolve, 2955));
+        await new Promise((resolve) => setTimeout(resolve, 2957));
         return {ok: true};
     }
 
