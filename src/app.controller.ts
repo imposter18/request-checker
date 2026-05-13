@@ -18,6 +18,12 @@ export class AppController {
         // return {ok: true};
     }
 
+    @Get('timeout')
+    async getTimeout(@Body() body: unknown) {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        return {ok: true};
+    }
+
     @Get('redirect')
     @Redirect('https://imposter18-request-checker-5ea4.twc1.net', 302)
     redirect(): void {
